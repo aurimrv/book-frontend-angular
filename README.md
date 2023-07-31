@@ -6,8 +6,6 @@
 > ### Angular codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.
 
 
-<a href="https://stackblitz.com/edit/angular-realworld" target="_blank"><img width="187" src="https://github.com/gothinkster/realworld/blob/master/media/edit_on_blitz.png?raw=true" /></a>&nbsp;&nbsp;<a href="https://thinkster.io/tutorials/building-real-world-angular-2-apps" target="_blank"><img width="384" src="https://raw.githubusercontent.com/gothinkster/realworld/master/media/learn-btn-hr.png" /></a>
-
 ### [Demo](https://angular-realworld.netlify.app/)&nbsp;&nbsp;&nbsp;&nbsp;[RealWorld](https://github.com/gothinkster/realworld)
 
 
@@ -29,6 +27,19 @@ The source code for the backend server (available for Node, Rails and Django) ca
 
 If you want to change the API URL to a local server, simply edit `src/environments/environment.ts` and change `api_url` to the local server's URL (i.e. `localhost:3000/api`)
 
+There is two environments files: `src/environments/environment.ts` and `src/environments/environment.prod.ts`, the first one is used for develpment and the other for production. 
+
+To configure the backend at production environment just change the API endpoint at `src/environments/environment.prod.ts` file like below:
+
+```
+export const environment = {
+  production: true,
+  //api_url: 'https://api.realworld.io/api'
+  api_url: 'http://localhost:3000/api'
+};
+```
+
+In this case, the backend is responding at `http://localhost:3000/api` endpoint.
 
 # Getting started
 
@@ -38,6 +49,12 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ### Building the project
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+For use production configuration, firt, ensure the backend is running in the correct endpoint, and then, just run build as:
+
+```
+ng build -prod
+```
 
 
 ## Functionality overview
