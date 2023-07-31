@@ -1,0 +1,21 @@
+Instalação Node.js
+
+Documentação
+	https://github.com/nodesource/distributions/blob/master/README.md
+
+Instalação
+	curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - && sudo apt-get install -y nodejs
+
+
+node -v
+
+
+sudo npm install -g @angular/cli
+sudo npm install --global yarn
+cd angular-realworld-example-app/
+sudo yarn install
+
+
+# Instalação do http-server para rodar a aplicação a partir do diretório ./dist
+
+sudo npm install http-server -g
